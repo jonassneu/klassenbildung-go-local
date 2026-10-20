@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="500" viewBox="0 0 1280 500" role="img" aria-label="Klassenbildung – Faire Klassen. Automatisch berechnet. Komplett lokal.">
+<style>
+.rise{opacity:0;animation:rise .9s cubic-bezier(.22,1,.36,1) forwards}
+.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.rise{animation:none;opacity:1}}
+</style>
+<g class="rise" style="transform-box:fill-box"><g transform="translate(584.0 48) scale(0.21875)"><defs><linearGradient id="bg" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#38a4ff"/><stop offset="1" stop-color="#0066d6"/></linearGradient></defs>
+<rect width="512" height="512" rx="112" fill="url(#bg)"/><circle cx="256" cy="170" r="68" fill="#fff"/><circle cx="135" cy="218" r="48" fill="#fff" opacity=".88"/><circle cx="377" cy="218" r="48" fill="#fff" opacity=".88"/>
+<path d="M139 401c0-83 52-141 117-141s117 58 117 141v19H139z" fill="#fff"/><path d="M48 397c0-64 38-111 87-111 22 0 43 10 58 27-28 31-45 75-45 125H48z" fill="#fff" opacity=".88"/><path d="M464 397c0-64-38-111-87-111-22 0-43 10-58 27 28 31 45 75 45 125h100z" fill="#fff" opacity=".88"/></g></g>
+<text class="rise d1" x="640.0" y="268" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, &quot;SF Pro Display&quot;, &quot;Inter&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="80" font-weight="600" letter-spacing="-2.4" fill="#f5f5f7">Klassenbildung.</text>
+<text class="rise d2" x="640.0" y="338" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, &quot;SF Pro Display&quot;, &quot;Inter&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="-0.5" fill="#f5f5f7">Faire Klassen. Automatisch berechnet. Komplett lokal.</text>
+<text class="rise d3" x="640.0" y="398" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, &quot;SF Pro Display&quot;, &quot;Inter&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="22" letter-spacing="0.1" fill="#a1a1a6">Aus einer Excel-Liste werden in wenigen Minuten ausgewogene Klassen –</text>
+<text class="rise d3" x="640.0" y="430" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, &quot;SF Pro Display&quot;, &quot;Inter&quot;, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="22" letter-spacing="0.1" fill="#a1a1a6">mit Freundeswünschen, Sprachen und Musikprofilen.</text>
+</svg>

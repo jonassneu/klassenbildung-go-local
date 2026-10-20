@@ -1,222 +1,196 @@
 <div align="center">
 
-<img src="assets/klassenbildung.svg" alt="Klassenbildung Logo" width="112">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/hero-dark.svg">
+  <img src="docs/images/hero-light.svg" alt="Klassenbildung. Faire Klassen. Automatisch berechnet. Komplett lokal." width="860">
+</picture>
 
-# Klassenbildung
+<a href="#macos"><img src="docs/images/btn-macos.svg" alt="Download für macOS" height="44"></a>&nbsp;&nbsp;
+<a href="#linux"><img src="docs/images/btn-linux.svg" alt="Download für Linux" height="44"></a>
 
-**Faire Klassen aus einer Excel-Liste – automatisch berechnet, lokal auf dem eigenen Rechner.**
+<sub><a href="#windows">Windows</a> &nbsp;›&nbsp;&nbsp;&nbsp; <a href="https://github.com/jonassneu/klassenbildung-go-local/releases/latest">Alle Downloads</a> &nbsp;›</sub>
 
-Freundeswünsche, Sprachen, Musikprofile und Klassengrößen werden gemeinsam abgewogen.
-Das Ergebnis lässt sich per Drag-and-drop nachbearbeiten und als Excel exportieren.
-
-[![Release](https://img.shields.io/github/v/release/jonassneu/klassenbildung-go-local?style=flat-square&color=0071e3)](https://github.com/jonassneu/klassenbildung-go-local/releases/latest)
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
-![OR-Tools](https://img.shields.io/badge/Google_OR--Tools-CP--SAT-4285F4?style=flat-square&logo=google&logoColor=white)
-![Plattformen](https://img.shields.io/badge/Linux%20·%20macOS%20·%20Windows-lokal-1d1d1f?style=flat-square)
-
-[**Herunterladen**](#installation) · [**So funktioniert's**](#so-funktionierts) · [**Selbst bauen**](#entwickler)
-
+<br>
 <br>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/ergebnis-dark.png">
-  <img src="docs/images/ergebnis.png" alt="Ergebnisansicht mit allen Klassen als Spalten" width="900">
+  <img src="docs/images/ergebnis.png" alt="Die Ergebnisansicht: Kennzahlen oben, darunter alle Klassen als Spalten" width="960">
+</picture>
+
+<br>
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/stats-dark.svg">
+  <img src="docs/images/stats-light.svg" alt="210 Kinder in rund zwei Minuten verteilt. 0 harte Regelverletzungen im Testlauf. 100 % lokal." width="860">
 </picture>
 
 </div>
 
----
-
-## ✨ Funktionen
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-**🧮 Optimierung statt Bauchgefühl**<br>
-Ein mehrstufiges Modell mit Google OR-Tools (CP-SAT) erfüllt Freundeswünsche, hält
-gegenseitige Freundschaften zusammen und verteilt Sprachen und Musikprofile möglichst
-ohne Mischklassen.
-
-</td>
-<td width="50%" valign="top">
-
-**🔒 Komplett lokal**<br>
-Schülerdaten verlassen nie den Rechner. Die App läuft im Browser unter
-`localhost`, braucht nach der Installation kein Internet und speichert nichts in der Cloud.
-
-</td>
-</tr>
-<tr>
-<td valign="top">
-
-**✅ Harte Regeln, klar geprüft**<br>
-Klassengröße, höchstens 10 Kinder aus derselben Grundschule, höchstens 4
-Unterstützungsmarkierungen je Klasse – Verstöße werden rot markiert und im Export vermerkt.
-
-</td>
-<td valign="top">
-
-**🖱️ Nachbearbeiten per Drag-and-drop**<br>
-Kinder lassen sich zwischen Klassen verschieben. Notizen, Profilkonflikte und manuelle
-Regeln bleiben sichtbar; nach dem Übernehmen werden die Kennzahlen neu geprüft.
-
-</td>
-</tr>
-<tr>
-<td valign="top">
-
-**📊 Excel rein, Excel raus**<br>
-Die Schülerliste wird aus dem Blatt `Basis` gelesen und vor der Berechnung auf Fehler
-geprüft. Das Ergebnis wird wieder als Excel-Datei exportiert.
-
-</td>
-<td valign="top">
-
-**📦 Ein Klick zur Installation**<br>
-Fertige Pakete für Linux (`.rpm`/`.deb`) und macOS (`.app`) mit eingebautem Python –
-nichts muss vorher installiert werden.
-
-</td>
-</tr>
-</table>
+<br>
 
 <a id="so-funktionierts"></a>
 
-## 🧭 So funktioniert's
+## Vier Schritte. Eine faire Verteilung.
 
-Die App führt in vier Schritten durch die Klassenbildung. Eine Testdatei mit 210
-Beispielkindern ([`DummyDaten.xlsx`](DummyDaten.xlsx)) ist eingebaut und lässt sich mit
-einem Klick laden.
+Eine Excel-Liste rein, ausgewogene Klassen raus. Die App führt durch jeden Schritt und
+zeigt immer nur, was gerade wichtig ist. Zum Ausprobieren ist eine Testdatei mit 210
+fiktiven Kindern eingebaut, sie lädt mit einem Klick.
 
-### 1 · Excel prüfen
+### 1&ensp;Excel prüfen.
 
-Schülerliste hochladen. Die App zeigt einen Dateiüberblick, die Freundeswünsche und die
-Verteilung nach Sprache, Geschlecht und Musikprofil. Blockierende Fehler wie fehlende
-Schülernummern oder mehrdeutige Freundeseinträge werden sofort angezeigt.
+Liste hochladen, fertig. Die App liest das Blatt `Basis`, zeigt einen Überblick über
+Freundeswünsche, Sprachen, Geschlecht und Musikprofile und markiert Fehler, bevor sie Ärger
+machen: eine fehlende Schülernummer, ein mehrdeutiger Freundeseintrag.
 
+<p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/excel-pruefen-dark.png">
-  <img src="docs/images/excel-pruefen.png" alt="Schritt 1: Excel prüfen">
+  <img src="docs/images/excel-pruefen.png" alt="Schritt 1: Excel prüfen mit Dateiüberblick" width="860">
 </picture>
+</p>
 
-### 2 · Einstellungen
+### 2&ensp;Rahmen setzen.
 
-Anzahl Klassen, Wunschgröße und Spielraum festlegen. Über die Gewichtungen wird gesteuert,
-wie stark die einzelnen Ziele gegeneinander abgewogen werden. Die empfohlenen Werte sind
-mit einem Klick wiederhergestellt.
+Anzahl Klassen, Wunschgröße, Spielraum. Gewichtungen legen fest, was wichtiger ist:
+Freundschaften, Sprachen oder Musikprofile. Die empfohlenen Werte sind einen Klick entfernt.
 
+<p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/einstellungen-dark.png">
-  <img src="docs/images/einstellungen.png" alt="Schritt 2: Einstellungen">
+  <img src="docs/images/einstellungen.png" alt="Schritt 2: Klassenrahmen und Rechenzeit einstellen" width="860">
 </picture>
+</p>
 
-### 3 · Berechnen
+### 3&ensp;Berechnen.
 
-`Klassen vorschlagen` startet die Optimierung. Ein Fortschrittsbalken zeigt den aktuellen
-Prüfschritt. Für rund 210 Kinder dauert ein Lauf etwa zwei Minuten.
+Ein Klick auf **Klassen vorschlagen**. Google OR-Tools wägt alle Ziele Schritt für Schritt
+gegeneinander ab: zuerst Sprachen, dann Musik, dann Freundschaften. Bei rund 210 Kindern
+dauert das etwa zwei Minuten.
 
-### 4 · Ergebnis
+### 4&ensp;Feinschliff von Hand.
 
-Kennzahlen auf einen Blick, alle Klassen als Spalten (siehe Bild ganz oben). Ein Klick auf
-ein Kind öffnet eine Detailkarte; per Drag-and-drop wird es in eine andere Klasse
-verschoben. Zum Schluss das Ergebnis als Excel exportieren.
+Jede Klasse ist eine Spalte, jedes Kind eine Zeile. Ziehen, ablegen, fertig. Ein Klick auf
+ein Kind zeigt Notizen und Wünsche. Anmerkungen sind orange markiert, Profilkonflikte rot.
+Zum Schluss geht das Ergebnis als Excel-Datei zurück.
 
-Die ausführliche Anleitung für Schulen steht in
-[`docs/school_user_workflow.md`](docs/school_user_workflow.md).
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/board-dark.png">
+  <img src="docs/images/board.png" alt="Nahaufnahme: Kinder lassen sich per Drag-and-drop zwischen Klassen verschieben" width="760">
+</picture>
+</p>
+
+<br>
+
+## Durchdacht bis ins Detail.
+
+**Kein Kind allein.**
+Gegenseitige Wünsche werden zusammengehalten. Ziel ist, dass kein Kind ohne Wunschfreund
+in eine neue Klasse kommt.
+
+**Harte Regeln bleiben hart.**
+Klassen bleiben in der eingestellten Größe. Pro Klasse kommen höchstens 10 Kinder aus
+derselben Grundschule und höchstens 4 mit Unterstützungsbedarf. Jeder Verstoß steht im
+Ergebnis und im Export.
+
+**Ihre Daten bleiben bei Ihnen.**
+Die App läuft unter `localhost` auf dem eigenen Rechner. Kein Konto, keine Cloud. Nach der
+Installation wird kein Internet gebraucht.
+
+**Hell und dunkel.**
+Die Oberfläche folgt dem Erscheinungsbild des Systems.
+
+<br>
 
 <a id="installation"></a>
 
-## 📥 Installation
+## Installieren.
 
-| System | Download | Hinweis |
-| --- | --- | --- |
-| 🐧 **Fedora, Nobara, openSUSE** | [`Klassenbildung-1.0.0-1.x86_64.rpm`](https://github.com/jonassneu/klassenbildung-go-local/releases/latest) | Doppelklicken → **Installieren** |
-| 🐧 **Ubuntu, Debian, Linux Mint** | [`Klassenbildung_1.0.0-1_amd64.deb`](https://github.com/jonassneu/klassenbildung-go-local/releases/latest) | Doppelklicken → **Installieren** |
-| 🍎 **macOS** | [`Klassenbildung-macOS.zip`](https://github.com/jonassneu/klassenbildung-go-local/releases/latest) | Entpacken, nach `/Programme` ziehen |
-| 🪟 **Windows** | Quellcode | `start_klassenbildung.bat` doppelklicken |
+<a id="macos"></a>
 
-### 🐧 Linux
+### macOS
 
-Beide Pakete enthalten Python 3.12, Streamlit, OR-Tools und alle weiteren Module. Nach der
-Installation steht **Klassenbildung** im App-Menü. Beim ersten Start wird keine
-Internetverbindung gebraucht. Einstellungen und Klassenprofile bleiben im Benutzerkonto.
-
-Die Pakete sind für 64-Bit-x86-Linux mit glibc 2.28 oder neuer gebaut; die RPM-Datei wird
-auf Nobara getestet.
-
-<details>
-<summary>Andere Architekturen: Quellpaket <code>Klassenbildung-Linux-Installer.tar.gz</code></summary>
-
-<br>
-
-Für andere Architekturen bleibt das Quellpaket `Klassenbildung-Linux-Installer.tar.gz` als
-technischer Ausweichweg. Dieses Archiv muss vor dem Start vollständig entpackt werden; ein
-Archivmanager kann daraus keine Programme ausführen. Dieser Weg installiert beim ersten
-Durchlauf eine eigene Python-Laufzeit und benötigt Internet.
-
-</details>
-
-### 🍎 macOS
-
-`Klassenbildung-macOS.zip` aus den [Releases](https://github.com/jonassneu/klassenbildung-go-local/releases/latest)
-entpacken und `Klassenbildung.app` nach `/Programme` ziehen – Python muss dafür **nicht**
-installiert sein.
-
-> [!WARNING]
-> Die App ist **nicht signiert und nicht notarisiert**. macOS zeigt deshalb beim ersten Start:
->
-> *„Klassenbildung“ konnte nicht geöffnet werden. Apple kann nicht überprüfen, ob
-> „Klassenbildung“ frei von Malware ist …*
->
-> Das ist erwartet und kein Fehler der App.
-
-**Lösung per Terminal (zuverlässig, empfohlen):**
-
-```bash
-xattr -dr com.apple.quarantine /Applications/Klassenbildung.app
-```
-
-Danach startet die App normal per Doppelklick.
-
-<details>
-<summary>Alternative über die Systemeinstellungen (ab macOS 13)</summary>
-
-<br>
-
-App doppelklicken, Meldung mit *Fertig* schließen, dann *Systemeinstellungen* →
-*Datenschutz & Sicherheit* → nach unten scrollen → bei „Klassenbildung wurde blockiert…“ auf
-*Dennoch öffnen* klicken.
+[`Klassenbildung-macOS.zip`](https://github.com/jonassneu/klassenbildung-go-local/releases/latest)
+laden, entpacken und `Klassenbildung.app` in den Ordner *Programme* ziehen. Python ist bereits
+enthalten.
 
 > [!NOTE]
-> Der frühere Weg „Rechtsklick → Öffnen“ funktioniert ab macOS 15 (Sequoia) nicht mehr.
+> Die App ist noch nicht von Apple notarisiert. Beim ersten Start meldet macOS deshalb,
+> dass es „Klassenbildung“ nicht überprüfen kann. Ein Befehl im Terminal behebt das dauerhaft:
+>
+> ```bash
+> xattr -dr com.apple.quarantine /Applications/Klassenbildung.app
+> ```
+
+<details>
+<summary>Ohne Terminal: über die Systemeinstellungen</summary>
+
+<br>
+
+App doppelklicken, die Meldung mit *Fertig* schließen. Dann *Systemeinstellungen* →
+*Datenschutz & Sicherheit* öffnen, nach unten scrollen und bei „Klassenbildung wurde
+blockiert …“ auf *Dennoch öffnen* klicken. Der frühere Weg „Rechtsklick → Öffnen“
+funktioniert ab macOS 15 (Sequoia) nicht mehr.
+
+Einstellungen und Klassenprofile liegen unter `~/Library/Application Support/Klassenbildung/`.
 
 </details>
 
-Einstellungen und Klassenprofile werden unter
-`~/Library/Application Support/Klassenbildung/` gespeichert.
+<a id="linux"></a>
 
-### 🪟 Windows & manueller Start
+### Linux
 
-Unter Windows `start_klassenbildung.bat` doppelklicken. Unter macOS und Linux funktioniert
-derselbe Weg mit:
+| Distribution | Paket |
+| --- | --- |
+| Fedora, Nobara, openSUSE | [`Klassenbildung-1.0.0-1.x86_64.rpm`](https://github.com/jonassneu/klassenbildung-go-local/releases/latest) |
+| Ubuntu, Debian, Linux Mint | [`Klassenbildung_1.0.0-1_amd64.deb`](https://github.com/jonassneu/klassenbildung-go-local/releases/latest) |
+
+Doppelklicken, auf **Installieren** klicken. Danach steht Klassenbildung im App-Menü. Python
+3.12, Streamlit und OR-Tools sind enthalten, Einstellungen bleiben im Benutzerkonto.
+
+<details>
+<summary>Systemvoraussetzungen und andere Architekturen</summary>
+
+<br>
+
+Die Pakete sind für 64-Bit-x86-Linux mit glibc 2.28 oder neuer gebaut; die RPM-Datei wird auf
+Nobara getestet. Für andere Architekturen gibt es das Quellpaket
+`Klassenbildung-Linux-Installer.tar.gz`. Es muss vor dem Start vollständig entpackt werden,
+richtet beim ersten Durchlauf eine eigene Python-Laufzeit ein und braucht dafür Internet.
+
+</details>
+
+<a id="windows"></a>
+
+### Windows
+
+Quellcode laden und `start_klassenbildung.bat` doppelklicken. Benötigt Python 3.11 oder neuer.
+
+<details>
+<summary>Manueller Start unter macOS und Linux</summary>
+
+<br>
 
 ```bash
-./start_klassenbildung.sh          # macOS: alternativ start_klassenbildung.command im Finder
+./start_klassenbildung.sh
 ```
 
-Das Skript legt beim ersten Start eine virtuelle Umgebung (`.venv`) an, installiert die
-Abhängigkeiten und öffnet <http://localhost:6767> im Browser.
+Unter macOS geht auch ein Doppelklick auf `start_klassenbildung.command`. Beim ersten Start
+entsteht eine virtuelle Umgebung (`.venv`) mit allen Abhängigkeiten, danach öffnet sich
+<http://localhost:6767> im Browser.
 
-> [!IMPORTANT]
-> Für den manuellen Start wird **Python 3.11 oder neuer** benötigt. Das mit macOS
-> ausgelieferte Python 3.9 reicht nicht aus – z. B. per Homebrew installieren:
-> `brew install python@3.13`
+Benötigt Python 3.11 oder neuer. Das mit macOS ausgelieferte Python 3.9 reicht nicht;
+Homebrew hilft: `brew install python@3.13`.
+
+</details>
+
+<br>
 
 <a id="entwickler"></a>
 
-## 🛠️ Für Entwickler
+## Für Entwickler.
 
 ```text
 klassenbildung/
@@ -230,14 +204,12 @@ klassenbildung/
 app.py               Streamlit-Einstieg
 ```
 
-**Tests ausführen:**
-
 ```bash
 .venv/bin/python -m pytest
 ```
 
 <details>
-<summary><b>🐧 Native Linux-Pakete bauen</b></summary>
+<summary><b>Linux-Pakete bauen</b></summary>
 
 <br>
 
@@ -245,11 +217,11 @@ app.py               Streamlit-Einstieg
 ./build_linux/build_native_packages.sh
 ```
 
-Der Standard-Build nutzt einen `manylinux_2_28`-Container und erzeugt RPM, DEB und
-`SHA256SUMS` unter `build_linux/packages/`. Mit `KB_NATIVE_LOCAL=1` kann lokal gebaut werden,
-das Ergebnis benötigt dann unter Umständen eine neuere glibc-Version.
+Baut in einem `manylinux_2_28`-Container und legt RPM, DEB und `SHA256SUMS` unter
+`build_linux/packages/` ab. Mit `KB_NATIVE_LOCAL=1` wird lokal gebaut; das Ergebnis braucht
+dann unter Umständen eine neuere glibc.
 
-**Benutzerkonto-Installationspaket (technischer Ausweichweg):**
+Das Quellpaket für andere Architekturen entsteht mit:
 
 ```bash
 ./build_linux/build_installer.sh
@@ -260,7 +232,7 @@ Ergebnis: `build_linux/dist/Klassenbildung-Linux-Installer.tar.gz` plus SHA-256-
 </details>
 
 <details>
-<summary><b>🍎 macOS-App bauen</b></summary>
+<summary><b>macOS-App bauen</b></summary>
 
 <br>
 
@@ -273,25 +245,25 @@ Ergebnis: `build_macos/dist/Klassenbildung.app` und `build_macos/dist/Klassenbil
 </details>
 
 <details>
-<summary><b>🔏 macOS-App signieren und notarisieren (optional)</b></summary>
+<summary><b>macOS-App signieren und notarisieren</b></summary>
 
 <br>
 
-Damit die Gatekeeper-Meldung dauerhaft verschwindet, muss die App mit einer Apple-Developer-ID
-signiert und von Apple notarisiert werden. Voraussetzung ist das
+Damit die Gatekeeper-Meldung verschwindet, muss die App mit einer Developer ID signiert und
+von Apple notarisiert werden. Dafür braucht es das
 [Apple Developer Program](https://developer.apple.com/programs/) (99 USD/Jahr).
 
-**Einmalig einrichten:**
+**Einmalig einrichten**
 
-1. Zertifikat vom Typ **„Developer ID Application“** erstellen und in den Schlüsselbund laden.
-   Nur dieser Typ funktioniert außerhalb des App Store – „Apple Development“ oder
-   „Apple Distribution“ werden von Gatekeeper abgelehnt. Vorhandene Identitäten anzeigen:
+1. Ein Zertifikat vom Typ **„Developer ID Application“** erstellen und in den Schlüsselbund
+   laden. Nur dieser Typ funktioniert außerhalb des App Store; „Apple Development“ und
+   „Apple Distribution“ lehnt Gatekeeper ab. Vorhandene Identitäten:
 
    ```bash
    security find-identity -v -p codesigning
    ```
 
-2. App-spezifisches Passwort auf https://account.apple.com erzeugen und den Notar-Zugang
+2. Auf https://account.apple.com ein app-spezifisches Passwort erzeugen und den Notar-Zugang
    im Schlüsselbund hinterlegen:
 
    ```bash
@@ -300,7 +272,7 @@ signiert und von Apple notarisiert werden. Voraussetzung ist das
        --password "app-spezifisches-passwort"
    ```
 
-**Bauen, signieren, notarisieren:**
+**Bauen, signieren, notarisieren**
 
 ```bash
 KB_CODESIGN_IDENTITY="Developer ID Application: Dein Name (TEAMID)" \
@@ -308,18 +280,16 @@ KB_NOTARY_PROFILE="klassenbildung" \
 ./build_macos/build.sh
 ```
 
-Das Skript signiert alle eingebetteten Bibliotheken einzeln, aktiviert die Hardened Runtime,
-lädt die App bei Apple hoch, wartet auf das Ergebnis, heftet das Ticket an die App
-(`stapler`) und packt sie neu. Die Notarisierung dauert meist wenige Minuten.
+Das Skript signiert jede eingebettete Bibliothek einzeln, aktiviert die Hardened Runtime,
+lädt die App zur Notarisierung hoch, heftet das Ticket an (`stapler`) und packt sie neu. Das
+dauert meist nur wenige Minuten.
 
 Die nötigen Ausnahmen für CPython (`allow-unsigned-executable-memory`, `allow-jit`,
-`disable-library-validation`) stehen in `build_macos/entitlements.plist` – ohne sie startet
-die App unter Hardened Runtime nicht.
+`disable-library-validation`) stehen in `build_macos/entitlements.plist`. Ohne sie startet die
+App unter der Hardened Runtime nicht.
 
 </details>
 
----
+<br>
 
-<div align="center">
-<sub>Alle Namen in den Screenshots stammen aus der fiktiven Testdatei <code>DummyDaten.xlsx</code>.</sub>
-</div>
+<p align="center"><sub>Alle Namen in den Bildern stammen aus der fiktiven Testdatei <code>DummyDaten.xlsx</code>.</sub></p>
